@@ -44,9 +44,6 @@
                         this.errMsg("删除失败")
                     }
                 })
-
-                console.log("删除");
-                console.log(file, fileList);
             },
             handlePictureCardPreview(file) {
                 this.dialogImageUrl = file.url;

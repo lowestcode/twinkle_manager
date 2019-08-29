@@ -149,7 +149,7 @@
                         this.errMsg("删除失败")
                     }
 
-                })
+                });
                 console.log(index, row._id);
             },
             getCommentList () {
@@ -172,7 +172,6 @@
                     }
                 ).then((res) => {
                     res = res.data;
-                    console.log(res)
                     if(res.code == 20000){
                         this.successMsg(res.message)
                         this.getCommentList();

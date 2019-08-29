@@ -5,6 +5,7 @@ import Home from "../page/home/Home";
 import Label from "../page/home/Label/Label";
 import ImageView from "../page/home/Image/ImageView";
 import Comment from "../page/home/Comment/Comment";
+import Article from "../page/home/Article/Article";
 Vue.use(Router);
 
 export default new Router({
@@ -17,7 +18,7 @@ export default new Router({
     {
       path: '/home',
       name: 'Home',
-      component: Home,
+      component: Home
       // children:[
       //   {
       //     path:'label',
@@ -40,6 +41,29 @@ export default new Router({
       path: '/comment',
       name: 'Comment',
       component: Comment
+    },
+    {
+      path: '/article',
+      name: 'Article',
+      component: Article,
+      redirect: '/article/articleList',
+      children:[
+        {
+          path:'articleEdit',
+          name: 'articleEdit',
+          component: ()=>import('@/page/home/Article/components/ArticleEdit')
+        },
+        {
+          path:'articleList',
+          name: 'articleList',
+          component: ()=>import('@/page/home/Article/components/ArticleList')
+        },
+        {
+          path:'articleView',
+          name: 'articleView',
+          component: ()=>import('@/page/home/Article/components/ArticleView')
+        }
+      ]
     },
   ]
 })

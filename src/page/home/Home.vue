@@ -10,6 +10,9 @@
       <router-link to="/comment">
         <el-button type="success" round>文章评论</el-button>
       </router-link>
+      <router-link to="/article">
+        <el-button type="danger" round>文章列表</el-button>
+      </router-link>
 
     </el-row>
   </div>
